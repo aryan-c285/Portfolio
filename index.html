@@ -1,46 +1,177 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Portfolio</title>
+  <meta name="viewport" content="wid  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold gradient-text mb-4">About Me</h3>
+      <div class="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-lg text-gray-300 leading-relaxed">
+          I'm currently pursuing <span class="text-teal-400 font-semibold">B.Tech in Computer Science at IIIT Delhi</span> and constantly exploring fields like web development, AI/ML, and cloud computing.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          I enjoy building innovative solutions and learning cutting-edge technologies. My passion lies in creating applications that make a difference in people's lives.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-6">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-graduation-cap text-teal-400"></i>
+            <span class="text-gray-300">IIIT Delhi - Computer Science</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-map-marker-alt text-teal-400"></i>
+            <span class="text-gray-300">Bijwasan, New Delhi</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-morphism rounded-2xl p-8 space-y-6">
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-laptop-code text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">Web Development</h4>
+            <p class="text-gray-400">Full-stack development with modern frameworks</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-brain text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">AI/ML</h4>
+            <p class="text-gray-400">Machine learning and artificial intelligence</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+            <i class="fas fa-cloud text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">Cloud Computing</h4>
+            <p class="text-gray-400">Cloud platforms and deployment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>ce-width, initial-scale=1.0" />
+  <title>Aryan Dev - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <script>
     // Enable dark mode by default
     tailwind.config = {
       darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
     };
-    // Check localStorage theme
-    if (localStorage.theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
   </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .dark .glass-morphism {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white dark:bg-gray-900 dark:text-white font-sans transition-colors duration-300">
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-white font-sans transition-all duration-500 min-h-screen relative overflow-x-hidden">
+  
+  <!-- Background Animation -->
+  <div class="fixed inset-0 pointer-events-none opacity-50">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute top-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1s;"></div>
+    <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+  </div>
 
   <!-- Header -->
-  <header class="p-6 bg-gray-800 dark:bg-gray-800 shadow-md">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-teal-400">Aryan Dev</h1>
-      <nav class="space-x-6 flex items-center">
-        <a href="#about" class="hover:text-teal-400">About</a>
-        <a href="#projects" class="hover:text-teal-400">Projects</a>
-        <a href="#skills" class="hover:text-teal-400">Skills</a>
-        <a href="#contact" class="hover:text-teal-400">Contact</a>
-        <!-- Toggle Button -->
-        <button onclick="toggleTheme()" class="ml-4 bg-gray-700 text-sm px-3 py-1 rounded-full hover:bg-gray-600">
-          Toggle Theme
-        </button>
+  <header class="fixed top-0 w-full z-50 glass-morphism backdrop-blur-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold gradient-text animate-fade-in">Aryan Choudhary</h1>
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="#about" class="hover:text-teal-400 transition-colors duration-300 text-sm font-medium">About</a>
+        <a href="#projects" class="hover:text-teal-400 transition-colors duration-300 text-sm font-medium">Projects</a>
+        <a href="#skills" class="hover:text-teal-400 transition-colors duration-300 text-sm font-medium">Skills</a>
+        <a href="#contact" class="hover:text-teal-400 transition-colors duration-300 text-sm font-medium">Contact</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden glass-morphism border-t border-white/10">
+      <nav class="flex flex-col space-y-4 p-6">
+        <a href="#about" class="hover:text-teal-400 transition-colors duration-300" onclick="toggleMobileMenu()">About</a>
+        <a href="#projects" class="hover:text-teal-400 transition-colors duration-300" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#skills" class="hover:text-teal-400 transition-colors duration-300" onclick="toggleMobileMenu()">Skills</a>
+        <a href="#contact" class="hover:text-teal-400 transition-colors duration-300" onclick="toggleMobileMenu()">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="text-center py-20">
-    <h2 class="text-4xl font-bold mb-4">Hello, I'm Aryan</h2>
-    <p class="text-lg text-gray-400 max-w-xl mx-auto">A passionate Computer Science student who loves to build web apps, learn new technologies, and solve real-world problems through code.</p>
+  <section class="relative pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto text-center animate-slide-up">
+      <div class="mb-8">
+        <div class="w-32 h-32 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl">
+          <i class="fas fa-code text-4xl text-white"></i>
+        </div>
+      </div>
+      <h2 class="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight">
+        Hello, I'm Aryan
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+        A passionate Computer Science student who loves to build 
+        <span class="text-teal-400 font-semibold">web apps</span>, learn 
+        <span class="text-blue-400 font-semibold">new technologies</span>, and solve 
+        <span class="text-purple-400 font-semibold">real-world problems</span> through code.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#projects" class="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          View My Work
+        </a>
+        <a href="#contact" class="border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+          Get In Touch
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- About -->
@@ -52,45 +183,349 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="max-w-4xl mx-auto p-6">
-    <h3 class="text-2xl font-bold text-teal-400 mb-4">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg">
-        <h4 class="text-xl font-semibold">Portfolio Website</h4>
-        <p class="text-gray-400">A personal portfolio to showcase my work using HTML, Tailwind CSS, and JavaScript.</p>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold gradient-text mb-4">Featured Projects</h3>
+      <div class="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-6"></div>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Here are some of my recent projects that showcase my skills and passion for development
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="group glass-morphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-user text-2xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-2">Portfolio Website</h4>
+        <p class="text-gray-400 mb-4 leading-relaxed">A personal portfolio to showcase my work using HTML, Tailwind CSS, and JavaScript with modern animations.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded-full">HTML</span>
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Tailwind</span>
+          <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">JavaScript</span>
+        </div>
+        <div class="flex space-x-3">
+          <a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
-      <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg">
-        <h4 class="text-xl font-semibold">Weather App</h4>
-        <p class="text-gray-400">A simple weather app using OpenWeatherMap API and React.js.</p>
+      
+      <div class="group glass-morphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-cloud-sun text-2xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-2">Weather App</h4>
+        <p class="text-gray-400 mb-4 leading-relaxed">A responsive weather application using OpenWeatherMap API and React.js with beautiful UI and real-time data.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">React</span>
+          <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">API</span>
+          <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">CSS3</span>
+        </div>
+        <div class="flex space-x-3">
+          <a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="group glass-morphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-calendar-check text-2xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-2">Attendance Tracker</h4>
+        <p class="text-gray-400 mb-4 leading-relaxed">A smart attendance tracking system with Firebase integration for real-time data management and analytics.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded-full">Firebase</span>
+          <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">JavaScript</span>
+          <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded-full">HTML5</span>
+        </div>
+        <div class="flex space-x-3">
+          <a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="group glass-morphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-microchip text-2xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-2">RISC-V Assembler</h4>
+        <p class="text-gray-400 mb-4 leading-relaxed">A comprehensive RISC-V assembler implementation that converts assembly code to machine code with error handling and optimization.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Python</span>
+          <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">RISC-V</span>
+          <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">Assembly</span>
+        </div>
+        <div class="flex space-x-3">
+          <a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="group glass-morphism rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-desktop text-2xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-bold text-white mb-2">RISC-V Simulator</h4>
+        <p class="text-gray-400 mb-4 leading-relaxed">A functional RISC-V processor simulator with pipeline visualization, memory management, and instruction execution tracking.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full">Python</span>
+          <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded-full">Simulation</span>
+          <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded-full">RISC-V</span>
+        </div>
+        <div class="flex space-x-3">
+          <a href="#" class="text-teal-400 hover:text-teal-300 transition-colors">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="max-w-4xl mx-auto p-6">
-    <h3 class="text-2xl font-bold text-teal-400 mb-4">Skills</h3>
-    <div class="flex flex-wrap gap-3 text-sm text-gray-200">
-      <span class="bg-gray-700 px-3 py-1 rounded-full">HTML</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">CSS</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">JavaScript</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">Python</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">React</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">Tailwind CSS</span>
-      <span class="bg-gray-700 px-3 py-1 rounded-full">Git</span>
+  <section id="skills" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold gradient-text mb-4">Skills & Technologies</h3>
+      <div class="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-6"></div>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Technologies I've been working with and continuously learning
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fab fa-html5 text-3xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Frontend</h4>
+        <p class="text-gray-400 text-sm">Building responsive and interactive user interfaces</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-server text-3xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Backend</h4>
+        <p class="text-gray-400 text-sm">Server-side development and API integration</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-tools text-3xl text-white"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Tools</h4>
+        <p class="text-gray-400 text-sm">Development tools and version control</p>
+      </div>
+    </div>
+
+    <div class="glass-morphism rounded-2xl p-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-4">
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-html5 text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">HTML</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-css3-alt text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">CSS</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-js-square text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">JavaScript</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-python text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">Python</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-lg font-bold">C</span>
+          </div>
+          <span class="text-sm font-medium text-gray-300">C</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-800 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-sm font-bold">C++</span>
+          </div>
+          <span class="text-sm font-medium text-gray-300">C++</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-java text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">Java</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-cyan-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-react text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">React</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white text-sm font-bold">TW</span>
+          </div>
+          <span class="text-sm font-medium text-gray-300">Tailwind</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-git-alt text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">Git</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-figma text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">Figma</span>
+        </div>
+        
+        <div class="group flex flex-col items-center p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+          <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-project-diagram text-white text-xl"></i>
+          </div>
+          <span class="text-sm font-medium text-gray-300">DSA</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="max-w-4xl mx-auto p-6">
-    <h3 class="text-2xl font-bold text-teal-400 mb-4">Contact Me</h3>
-    <p class="text-gray-300">Feel free to reach out via email or connect with me on LinkedIn!</p>
-    <p class="text-teal-300 mt-2">📧 aryan@example.com</p>
-    <p class="text-teal-300">🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank" class="underline">LinkedIn</a></p>
+  <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold gradient-text mb-4">Let's Connect</h3>
+      <div class="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-6"></div>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        I'm always open to discussing new opportunities and interesting projects
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="flex items-center space-x-4 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-envelope text-2xl text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">Email</h4>
+            <a href="mailto:aryan24121@iiitd.ac.in" class="text-teal-400 hover:text-teal-300 transition-colors">aryan24121@iiitd.ac.in</a>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-linkedin text-2xl text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/aryan-choudhary-978792248/" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors">Connect with me</a>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fab fa-github text-2xl text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">GitHub</h4>
+            <a href="https://github.com/aryan-c285" target="_blank" class="text-teal-400 hover:text-teal-300 transition-colors">View my repositories</a>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-4 group">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <i class="fas fa-phone text-2xl text-white"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white">Phone</h4>
+            <a href="tel:+919115263242" class="text-teal-400 hover:text-teal-300 transition-colors">+91 9115263242</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-morphism rounded-2xl p-8">
+        <form class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+            <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-teal-400 focus:outline-none transition-colors" placeholder="Your name">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+            <input type="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-teal-400 focus:outline-none transition-colors" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+            <textarea rows="4" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-teal-400 focus:outline-none transition-colors resize-none" placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-4 text-gray-500 mt-10">
-    &copy; 2025 Aryan Dev. All rights reserved.
+  <footer class="glass-morphism border-t border-white/10 py-8 mt-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h4 class="text-xl font-bold gradient-text">Aryan Choudhary</h4>
+          <p class="text-gray-400 text-sm">Computer Science Student @ IIIT Delhi</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://github.com/aryan-c285" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-choudhary-978792248/" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="tel:+919115263242" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <i class="fas fa-phone text-xl"></i>
+          </a>
+          <a href="mailto:aryan24121@iiitd.ac.in" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-6 pt-6 text-center">
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Aryan Choudhary. Made with <i class="fas fa-heart text-red-500"></i> and lots of <i class="fas fa-coffee text-yellow-500"></i>
+        </p>
+      </div>
+    </div>
   </footer>
 
   <!-- Toggle Script -->
@@ -105,6 +540,54 @@
         localStorage.setItem('theme', 'dark');
       }
     }
+    
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('hidden');
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add scroll effect to header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.classList.add('backdrop-blur-xl');
+      } else {
+        header.classList.remove('backdrop-blur-xl');
+      }
+    });
+    
+    // Intersection Observer for animations
+    const observeElements = (selector, animationClass) => {
+      const elements = document.querySelectorAll(selector);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(animationClass);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      elements.forEach(el => observer.observe(el));
+    };
+    
+    // Initialize animations on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      observeElements('section', 'animate-fade-in');
+    });
   </script>
 </body>
 </html>
